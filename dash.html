@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brineverse SMP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, rgb(192, 3, 3), rgb(165, 33, 33));
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo a {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: WHITE;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: #444;
+            transform: scale(1.1);
+        }
+
+        .welcome-section {
+            background-image: url('/assets/images/background.webp'); /* Replace with a custom image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            text-shadow: 2px 2px 5px rgb(0, 0, 0);
+        }
+
+        .welcome-section h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* Content sections */
+        .content-cards, .blog-section, .testimonials-section, .faq-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .content-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card i {
+            font-size: 40px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* Blog Section */
+        .blog-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .blog-card {
+            background: white;
+            padding: 20px;
+            margin: 10px auto;
+            width: 70%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .blog-card h4 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: #f9f9f9;
+        }
+
+        .testimonials-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .testimonial {
+            margin: 10px auto;
+            padding: 20px;
+            width: 70%;
+            text-align: left;
+            border-left: 5px solid #333;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .testimonial p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .testimonial cite {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* FAQ Section */
+        .faq-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .faq {
+            text-align: left;
+            margin: 0 auto;
+            padding: 10px 20px;
+            width: 70%;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .faq h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .faq p {
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="assets/images/brineverse.webp" alt="Brineverse Logo">
+        <a href="dash.html"></a>
+    </div>
+    <nav>
+        <a href="dash.html"><i class="fas fa-home"></i> Home</a>
+        <a href="tools.html"><i class="fas fa-cogs"></i> Tools</a>
+        <a href="members.html"><i class="fas fa-users"></i> Members</a>
+        <a href="others.html"><i class="fas fa-globe"></i> Web</a>
+    </nav>
+</header>
+
+<section class="welcome-section">
+    <h1>Welcome to Brineverse</h1>
+    <p>Explore the revival of Herobrine SMP and embark on a unique adventure with us!</p>
+</section>
+
+<div class="content-cards">
+    <div class="card">
+        <i class="fas fa-cogs"></i>
+        <h3>Tools</h3>
+        <p>Discover tools like background remover and more.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-users"></i>
+        <h3>Members</h3>
+        <p>Meet the members of our SMP community.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-globe"></i>
+        <h3>Web Resources</h3>
+        <p>Access free resources like MCPE APKs and more.</p>
+    </div>
+</div>
+
+
+   
+
+<section class="testimonials-section">
+    <h2>What We Say</h2>
+    <div class="testimonial">
+        <p>"Brineverse has brought back the true spirit of Herobrine SMP. It's an amazing community!"</p>
+        <cite>— Maxobrine </cite>
+    </div>
+    <div class="testimonial">
+        <p>"The tools and resources provided are top-notch. I've had a great time exploring the SMP!"</p>
+        <cite>— BrineAjay</cite>
+    </div>
+</section>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+        <h4>Q: How do I join Brineverse SMP?</h4>
+        <div class="video-preview">
+            <iframe 
+                src="https://www.youtube.com/embed/H-ZI8QRrhk8" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <style>
+        /* Styling for the YouTube video preview */
+        .video-preview {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .video-preview h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .video-preview iframe {
+            width: 80%; /* Responsive width */
+            max-width: 800px; /* Limit maximum width */
+            height: 450px; /* Responsive height */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        
+        .video-preview iframe:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        </style>
+        
+    </div>
+    <div class="faq">
+        <h4>Q: Are the tools free to use?</h4>
+        <p>A: Yes, all our tools are completely free for our members.</p>
+        <cite>— BrineAjay</cite>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Brineverse SMP. Designed by <a href="#">BrineAjay</a>. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

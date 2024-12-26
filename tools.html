@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brineverse SMP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, rgb(192, 3, 3), rgb(165, 33, 33));
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo a {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: #444;
+            transform: scale(1.1);
+        }
+
+        .content-cards {
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            width: 300px;
+            height: 350px; /* Adjusting the height to fit the name below */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Aligns text to the bottom */
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 80%; /* Adjust the image height */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card-name {
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/images/brineverse.webp" alt="Brineverse Logo">
+            <a href="dash.html">Brineverse SMP</a>
+        </div>
+        <nav>
+            <a href="dash.html"><i class="fas fa-home"></i> Home</a>
+            <a href="tools.html"><i class="fas fa-cogs"></i> Tools</a>
+            <a href="members.html"><i class="fas fa-users"></i> Members</a>
+            <a href="others.html"><i class="fas fa-globe"></i> Web</a>
+        </nav>
+    </header>
+
+    <section class="content-cards">
+        <div class="card" onclick="window.location.href='bgtool.html';">
+            <img src="assets/bg1.gif" alt="BG Tool">
+            <div class="card-name">BG Remover</div>
+        </div>
+        <div class="card" onclick="window.location.href='custom-coding.html';">
+            <img src="assets/lv_0_20241226155430-ezgif.com-video-to-gif-converter.gif" alt="Custom Coding">
+            <div class="card-name">Image upscaler</div>
+        </div>
+        <div class="card" onclick="window.location.href='security-features.html';">
+            <img src="assets/images/soon.avif" alt="Security Features">
+            <div class="card-name">soon</div>
+        </div>
+        <div class="card" onclick="window.location.href='analytics.html';">
+            <img src="assets/images/soon.avif" alt="Analytics">
+            <div class="card-name">soon</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Brineverse SMP | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

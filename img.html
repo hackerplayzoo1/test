@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upscaler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        canvas {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            max-width: 100%;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Upscaler</h1>
+    <p>Upload an image to upscale it.</p>
+    <input type="file" id="imageInput" accept="image/*">
+    <div id="output"></div>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const outputDiv = document.getElementById('output');
+
+        imageInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+
+                reader.onload = () => {
+                    const img = new Image();
+                    img.src = reader.result;
+
+                    img.onload = () => {
+                        const upscaleFactor = 2; // Set the scale factor for upscaling
+
+                        // Create canvas for upscaled image
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+
+                        canvas.width = img.width * upscaleFactor;
+                        canvas.height = img.height * upscaleFactor;
+
+                        // Draw upscaled image
+                        ctx.imageSmoothingEnabled = true;
+                        ctx.imageSmoothingQuality = 'high';
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                        // Display the upscaled image
+                        outputDiv.innerHTML = '';
+                        outputDiv.appendChild(canvas);
+                    };
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                outputDiv.innerHTML = '<p>Please upload a valid image file.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
